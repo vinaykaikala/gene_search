@@ -8,7 +8,7 @@ gene_query application
  
  - Run application
     --
-    - genequery_api -p 8080
+    - genequery_api -p 8090
     
  
  - Example:
