@@ -1,0 +1,6 @@
+flask-restplus==0.12.1
+Flask-SQLAlchemy==2.4.0
+requests
+click
+pytest==5.0.1
+PyMysql==0.9.3
