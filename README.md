@@ -26,3 +26,8 @@ gene_query application
     - python -m pytest
 
 
+Sample application deployed in heroku
+=====
+-	URL: https://genequery.herokuapp.com/
+
+
