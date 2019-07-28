@@ -4,6 +4,6 @@ TAG="latest"
 else
 TAG="$TRAVIS_BRANCH"
 fi
-docker build -f docker/Dockerfile -t $TRAVIS_REPO_SLUG:$TAG .
-docker tag $TRAVIS_REPO_SLUG $DOCKER_REPO
+docker build -f docker/Dockerfile -t genequery:latest .
+docker tag genequery $DOCKER_REPO
 docker push $DOCKER_REPO
