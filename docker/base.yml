@@ -1,0 +1,11 @@
+name: base
+channels:
+  - conda-forge
+  - bioconda
+  - r
+  - defaults
+dependencies:
+  - pip      
+  - pip:
+    - git+https://github.com/vinaykaikala/gene_search.git
+
