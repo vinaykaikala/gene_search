@@ -9,7 +9,7 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
     libglib2.0-0 libxext6 libsm6 libxrender1 \
     git mercurial subversion python-pip python-dev build-essential
 
-COPY base.yml /base.yml
+COPY ./docker/base.yml /base.yml
 RUN conda env update -f /base.yml
 
 ENTRYPOINT ["genequery_api"]
