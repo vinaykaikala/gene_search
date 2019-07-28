@@ -4,6 +4,7 @@ gene_query application
 - Instal
     --
     - python setup.py install
+    - pip install requirements.txt
     - pip install .
  
  - Run application
