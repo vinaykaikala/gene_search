@@ -37,41 +37,44 @@ gene_search application
 
  - Run Docker Container 
     --
-```
    - docker run  --network=host -it vinaykaikala/genequery:latest -p 500	
-```	
 
-```
 
-- Submit and run background jobs with Rabbitmq, celery
+-Submit and run background jobs with Rabbitmq, celery
 =======
 
 - Install
 --------
+```
 - sudo apt-get install rabbitmq-server
 - pip install celery
 
+```
 - Start rabbitmq message broker, celery worker and flask
 -------
+```
 - cd gene_search	
 - celery -A app.celery worker --loglevel=info
 - genequery_api -p 8090 
-
- - Example:
+```
+- Example:
     --
     To use swager UI: http://localhost:8090/api/
     - 1: submit job to queue
         --
-        -  http://localhost:5000/api/rabbitmq/gene/?lookup=tre
-	```
-		-Return the status and task_id submitted to queue
-		----
+  ```
+        
+  http://localhost:5000/api/rabbitmq/gene/?lookup=tre
+	
+		Return the status and task_id submitted to queue
+		---------------------------------
 		-{ "status": "PENDING",  "task_id": "99081de1-2290-420d-96aa-0ca4c7221b22"}
-        ``` 
+  ```
     - 2: Get status and result for submitted job
         --
-        - http://localhost:5000/api/rabbitmq/gene/status?qid=99081de1-2290-420d-96aa-0ca4c7221b22
-        ```
+  ```
+   http://localhost:5000/api/rabbitmq/gene/status?qid=99081de1-2290-420d-96aa-0ca4c7221b22
+    
 		{
  		 "status": "SUCCESS",
 		  "total_records": 1,
@@ -88,9 +91,7 @@ gene_search application
 			  ]
 		}
 
-	```
-
-```
+  ```
 
 Sample application deployed in heroku
 =====
