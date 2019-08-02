@@ -11,3 +11,6 @@ RESTPLUS_ERROR_404_HELP = False
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://anonymous@ensembldb.ensembl.org/ensembl_website_97'
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+CELERY_BROKER_URL = "pyamqp://localhost//"
+CELERY_RESULT_BACKEND = "rpc://"

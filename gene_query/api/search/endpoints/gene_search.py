@@ -10,7 +10,7 @@ from gene_query.database.models import GeneAutoComplete
 
 log = logging.getLogger(__name__)
 
-ns = api.namespace('search/gene', description='Operations related to blog categories')
+ns = api.namespace('search/gene', description='Operations to gene search')
 
 
 @ns.route('/')
