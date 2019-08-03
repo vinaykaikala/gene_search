@@ -14,7 +14,7 @@ ns = api.namespace('search/gene', description='Operations to gene search')
 
 
 @ns.route('/')
-@api.response(404, 'Post not found.')
+@api.response(405, 'Post not found.')
 @api.response(400, 'Validation Error')
 @api.response(200, 'Found gene information')
 class GeneSearch(Resource):

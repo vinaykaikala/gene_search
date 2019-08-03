@@ -2,7 +2,7 @@ import logging
 from flask import current_app as app
 from flask_restplus import Resource
 from gene_query.api.rabbitmqp.business import get_genes
-from gene_query.api.rabbitmqp.serializers import search_result
+from gene_query.api.rabbitmqp.serializers import search_result, gene_list
 from gene_query.api.rabbitmqp.parsers import search_arguments, search_status
 from gene_query.api.restplus import api
 from gene_query import factory
@@ -15,7 +15,7 @@ log = logging.getLogger(__name__)
 ns = api.namespace('rabbitmq/gene', description='operation gene search with rabbitmqp')
 
 @ns.route('/')
-@api.response(404, 'Post not found.')
+@api.response(405, 'Post not found.')
 @api.response(400, 'Validation Error')
 @api.response(200, 'Found gene information')
 class GeneSearch(Resource):
@@ -62,12 +62,12 @@ class GeneSearch(Resource):
         return results
 
 @ns.route('/status')
-@api.response(404, 'Post not found.')
+@api.response(405, 'Post not found.')
 @api.response(400, 'Validation Error')
 @api.response(200, 'Found gene information')
 class GeneStatus(Resource):
     @api.expect(search_status, validate=True)
-#    @api.marshal_list_with(search_result)
+    @api.marshal_with(gene_list)
     def get(self):
 
         """

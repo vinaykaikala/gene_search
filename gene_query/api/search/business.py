@@ -12,5 +12,5 @@ def get_genes(lookup, species=None):
     if species:
         return gene_table.query.filter(gene_table.display_label.like(lookup + "%"), gene_table.species == species).all(), 200
 
-    return gene_table.query.filter(gene_table.display_label.like("%" + lookup)).all(), 200
+    return  gene_table.query.filter(gene_table.display_label.like(lookup + "%")).all(), 200
 
