@@ -7,5 +7,5 @@ channels:
 dependencies:
   - pip      
   - pip:
+    - celery      
     - git+https://github.com/vinaykaikala/gene_search.git
-
