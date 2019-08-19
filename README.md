@@ -47,6 +47,7 @@ gene_search application
 --------
 ```
 - sudo apt-get install rabbitmq-server
+- sudo service rabbitmq-server start
 - pip install celery
 
 ```
