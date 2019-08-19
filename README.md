@@ -96,5 +96,5 @@ gene_search application
 
 Sample application deployed using aws-EBK
 =====
--	URL: http://genequery-env.rmcgi65tpv.eu-north-1.elasticbeanstalk.com/api/
+-	URL: http://genequery-env-2.8gciguv6qi.eu-north-1.elasticbeanstalk.com/api/
 -       docker run  --network=host -it vinaykaikala/genequery:latest 
