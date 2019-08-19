@@ -9,25 +9,24 @@ def test_gene_result(client):
     assert response.status_code == 200
     assert len(response.json) == 1
     assert response.json == [{
-    "species": "chlorocebus_sabaeus",
-    "stable_id": "ENSCSAG00000008218",
-    "display_label": "BRAF",
+    "gene_names": "BRAF",
     "location": "21:109545491-109690195",
-    "db": "core"
+    "Ensembl_stable_ID": "ENSCSAG00000008218",
+    "species": "chlorocebus_sabaeus"
     }]
 
     "Test Case:2 for given lookup value uppercase"
     response = client.get("api/search/gene/?lookup=BRAP")
     # Validate the response
     assert response.status_code == 200
-    assert len(response.json) == 181
+    assert len(response.json) == 182
 
 
     "Test Case:3 for given lookup value in lowercase"
     response = client.get("api/search/gene/?lookup=brap")
     # Validate the response
     assert response.status_code == 200
-    assert len(response.json) == 181
+    assert len(response.json) == 182
 
     "Test Case:4 for given lookup value length less than 3"
     response = client.get("api/search/gene/?lookup=BR")
