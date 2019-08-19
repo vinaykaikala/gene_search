@@ -50,7 +50,7 @@ logging.basicConfig(level=logging.INFO)
 def main(port):
     #initialize_app(app)
     logging.info('>>>>> Starting development server at http://{}/api/ <<<<<'.format('localhost'))
-    app.run(debug=settings.FLASK_DEBUG, port=port)
+    app.run(host="0.0.0.0", debug=settings.FLASK_DEBUG, port=port)
 
 
 
