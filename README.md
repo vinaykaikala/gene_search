@@ -93,6 +93,7 @@ gene_search application
 
   ```
 
-Sample application deployed in heroku
+Sample application deployed using aws-EBK
 =====
--	URL: https://genequery.herokuapp.com/
+-	URL: http://genequery-env.rmcgi65tpv.eu-north-1.elasticbeanstalk.com/api/
+-       docker run  --network=host -it vinaykaikala/genequery:latest 
