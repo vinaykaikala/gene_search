@@ -13,4 +13,4 @@ COPY ./docker/base.yml /base.yml
 RUN conda env update -f /base.yml
 
 ENTRYPOINT ["genequery_api"]
-CMD ["-p 5000"]
+CMD ["-p 80"]
